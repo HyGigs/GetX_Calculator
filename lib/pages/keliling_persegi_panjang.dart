@@ -17,7 +17,7 @@ class KelilingPersegiPanjang extends StatefulWidget {
 class _kelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
 
   TextEditingController  panjangController = TextEditingController();
-  TextEditingController  lebarController = TextEditingController();
+  TextEditingController lebarController = TextEditingController();
   final Controller controller = Get.put(Controller());
 
 

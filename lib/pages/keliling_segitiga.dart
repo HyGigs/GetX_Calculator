@@ -63,7 +63,7 @@ class _KelilingSegitigaState extends State<KelilingSegitiga> {
         SizedBox(
           height: 10,
         ),
-        Obx(() => Text('${controller.hasilKelilingSegitiga.value}'))
+        Obx( () => Text('${controller.hasilKelilingSegitiga.value}'))
       ],
     ));
   }
