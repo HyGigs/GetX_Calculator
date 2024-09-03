@@ -5,17 +5,29 @@ import 'package:flutter/services.dart';
 import 'package:calculator_getx/controller.dart';
 import 'package:calculator_getx/widget/button.dart';
 import 'package:calculator_getx/widget/text_field.dart';
+import 'dart:math'; // Add this import
 
 class KelilingSegitiga extends StatefulWidget {
   @override
   _KelilingSegitigaState createState() => _KelilingSegitigaState();
 }
 
+class Controller extends GetxController {
+  var hasilKelilingSegitiga = 0.0.obs;
+
+  void KelilingSegitiga(double alas, double tinggi) {
+    // Assuming it's a right-angled triangle; you might want to adjust the formula based on your needs.
+    double keliling = alas + tinggi + sqrt(alas * alas + tinggi * tinggi);
+    hasilKelilingSegitiga.value = keliling;
+  }
+}
+
 class _KelilingSegitigaState extends State<KelilingSegitiga> {
   TextEditingController ctrAlas = TextEditingController();
   TextEditingController ctrTinggi = TextEditingController();
   final Controller controller = Get.put(Controller());
- String ada = "";
+  String ada = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +45,7 @@ class _KelilingSegitigaState extends State<KelilingSegitiga> {
             borderColor: Colors.black,
             focusedBorderColor: Colors.blueAccent,
             enabledBorderColor: Colors.blueAccent),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10),
         CustomTextField(
             controller: ctrTinggi,
             labelText: "Tinggi",
@@ -47,9 +57,7 @@ class _KelilingSegitigaState extends State<KelilingSegitiga> {
             borderColor: Colors.black,
             focusedBorderColor: Colors.blueAccent,
             enabledBorderColor: Colors.blueAccent),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10),
         CustomButton(
             text: "Hitung",
             onPressed: () => controller.KelilingSegitiga(
@@ -60,9 +68,7 @@ class _KelilingSegitigaState extends State<KelilingSegitiga> {
             buttonType: ButtonType.elevated,
             borderWidth: 0,
             borderColor: Colors.transparent),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10),
         Obx(() => Text('${controller.hasilKelilingSegitiga.value}'))
       ],
     ));
