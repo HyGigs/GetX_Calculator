@@ -51,6 +51,18 @@ class Home extends StatelessWidget {
                     buttonType: ButtonType.elevated,
                     borderWidth: 0,
                     borderColor: Colors.transparent),
+                SizedBox(height: 10,),
+                CustomButton(
+                    text: "Aritmatika",
+                    onPressed: () {
+                      Get.toNamed('/aritmatika');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
               ])),
         ));
   }

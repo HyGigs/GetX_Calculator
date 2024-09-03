@@ -1,3 +1,4 @@
+import 'package:calculator_getx/pages/kalkulator_aritmatika.dart';
 import 'package:get/get.dart';
 import 'package:calculator_getx/pages/home.dart';
 import 'package:calculator_getx/pages/keliling_segitiga.dart';
@@ -8,6 +9,7 @@ class AppRoutes {
   static const String kelilingSegitiga = '/kelilingSegitiga';
   static const String kelilingPersegiPanjang = '/kelilingPersegiPanjang';
   static const String kelilingPersegi = '/kelilingPersegi';
+  static const String aritmatika = '/aritmatika';
 
 
   static final routes = [
@@ -15,5 +17,9 @@ class AppRoutes {
     GetPage(name: kelilingSegitiga, page: () =>  KelilingSegitiga()),
     GetPage(name: kelilingPersegiPanjang, page: () => KelilingPersegiPanjang()),
     GetPage(name: kelilingPersegi, page: () => KelilingPersegi())
+    GetPage(name: kelilingSegitiga, page: () => KelilingSegitiga()),
+    GetPage(name: kelilingPersegiPanjang, page: () => KelilingPersegiPanjang()),
+    GetPage(name: aritmatika, page: () => KalkulatorAritmatika()),
+
   ];
 }
