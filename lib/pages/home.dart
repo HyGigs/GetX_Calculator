@@ -14,6 +14,19 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomButton(
+                text: "Keliling Segitiga",
+                onPressed: () {
+                  Get.toNamed('/kelilingSegitiga');
+                },
+                backgroundColor: Colors.black,
+                textColor: Colors.white,
+                textSize: 16.0,
+                buttonType: ButtonType.elevated,
+                borderWidth: 0,
+                borderColor: Colors.transparent,
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
                 text: "Keliling Persegi Panjang",
                 onPressed: () {
                   Get.toNamed('/kelilingPersegiPanjang');
@@ -27,9 +40,9 @@ class Home extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               CustomButton(
-                text: "Keliling Segitiga",
+                text: "Keliling Persegi",
                 onPressed: () {
-                  Get.toNamed('/kelilingSegitiga');
+                  Get.toNamed('/kelilingPersegi');
                 },
                 backgroundColor: Colors.black,
                 textColor: Colors.white,
@@ -69,6 +82,19 @@ class Home extends StatelessWidget {
                 text: "Keliling Tabung",
                 onPressed: () {
                   Get.toNamed('/kelilingTabung');
+                },
+                backgroundColor: Colors.black,
+                textColor: Colors.white,
+                textSize: 16.0,
+                buttonType: ButtonType.elevated,
+                borderWidth: 0,
+                borderColor: Colors.transparent,
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                text: "Aritmatika",
+                onPressed: () {
+                  Get.toNamed('/aritmatika');
                 },
                 backgroundColor: Colors.black,
                 textColor: Colors.white,

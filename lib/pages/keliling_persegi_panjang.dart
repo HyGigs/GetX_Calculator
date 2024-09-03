@@ -1,54 +1,75 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:flutter/services.dart';
-import 'package:calculator_getx/route.dart';
 import 'package:calculator_getx/controller.dart';
+import 'package:calculator_getx/widget/button.dart';
+import 'package:calculator_getx/widget/text_field.dart';
 
 class KelilingPersegiPanjang extends StatefulWidget {
-  const KelilingPersegiPanjang({super.key});
-
   @override
-  State<KelilingPersegiPanjang> createState() => _kelilingPersegiPanjangState();
+  _KelilingPersegiPanjangState createState() => _KelilingPersegiPanjangState();
 }
 
-class _kelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
+class _KelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
   TextEditingController panjangController = TextEditingController();
   TextEditingController lebarController = TextEditingController();
   final Controller controller = Get.put(Controller());
 
-  Widget myTextField(
-      TextEditingController ctr, String myLabel, TextInputType TextInputType) {
-    return Container(
-        margin: EdgeInsets.all(10),
-        child: TextField(
-            controller: ctr,
-            keyboardType: TextInputType,
-            decoration: InputDecoration(
-                label: Text(
-              myLabel,
-            ))));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text('keliling Persegi Panjang'),
-      myTextField(panjangController, 'Panjang', TextInputType.number),
-      myTextField(lebarController, 'Lebar', TextInputType.number),
-      SizedBox(
-        height: 10,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Menghitung Keliling Persegi Panjang',
+            style: TextStyle(fontSize: 30),
+          ),
+          CustomTextField(
+            controller: panjangController,
+            labelText: "Panjang",
+            keyboardType: TextInputType.number,
+            obscureText: false,
+            fontSize: 16.0,
+            textColor: Colors.black,
+            labelTextColor: Colors.black,
+            borderColor: Colors.black,
+            focusedBorderColor: Colors.blueAccent,
+            enabledBorderColor: Colors.blueAccent,
+          ),
+          SizedBox(height: 10),
+          CustomTextField(
+            controller: lebarController,
+            labelText: "Lebar",
+            keyboardType: TextInputType.number,
+            obscureText: false,
+            fontSize: 16.0,
+            textColor: Colors.black,
+            labelTextColor: Colors.black,
+            borderColor: Colors.black,
+            focusedBorderColor: Colors.blueAccent,
+            enabledBorderColor: Colors.blueAccent,
+          ),
+          SizedBox(height: 10),
+          CustomButton(
+            text: "Hitung",
+            onPressed: () => controller.kelilingPersegiPanjang(
+              double.parse(panjangController.text),
+              double.parse(lebarController.text),
+            ),
+            backgroundColor: Colors.blueAccent,
+            textColor: Colors.white,
+            textSize: 16.0,
+            buttonType: ButtonType.elevated,
+            borderWidth: 0,
+            borderColor: Colors.transparent,
+          ),
+          SizedBox(height: 10),
+          Obx(() => Text(
+              'Hasil: ${controller.hasilKelilingPersegiPanjang.value}',
+              style: TextStyle(fontSize: 20),
+          )),
+        ],
       ),
-      ElevatedButton(
-        onPressed: () => controller.kelilingPersegiPanjang(
-          double.parse(panjangController.text),
-          double.parse(lebarController.text),
-        ),
-        child: Text('Hitung'),
-      ),
-      Obx(() => Text('hasil : ${controller.hasilKelilingPersegiPanjang.value}'))
-    ]));
+    );
   }
 }
