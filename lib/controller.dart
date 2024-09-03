@@ -6,7 +6,7 @@ class Controller extends GetxController {
   final hasilKelilingSegitiga = RxDouble(0.0);
   final hasilKelilingPersegiPanjang = RxDouble(0.0);
 
-  KelilingSegitiga (double alas,double tinggi){
+  KelilingSegitiga (double alas, double tinggi){
     hasilKelilingSegitiga.value = 0.5 * alas * tinggi;
 }
   kelilingPersegiPanjang(double panjang, double lebar){
