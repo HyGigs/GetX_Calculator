@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:calculator_getx/controller.dart';
 import 'package:calculator_getx/widget/button.dart';
 import 'package:calculator_getx/widget/text_field.dart';
-import 'dart:math';
 
 class KelilingSegitiga extends StatefulWidget {
   @override
@@ -53,10 +52,12 @@ class _KelilingSegitigaState extends State<KelilingSegitiga> {
           SizedBox(height: 10),
           CustomButton(
             text: "Hitung",
-            onPressed: () => controller.KelilingSegitiga(
-              double.parse(ctrAlas.text),
-              double.parse(ctrTinggi.text),
-            ),
+            onPressed: () {
+              double alas = double.parse(ctrAlas.text);
+              double tinggi = double.parse(ctrTinggi.text);
+
+              controller.kelilingSegitiga(alas, tinggi); // Call method with 2 sides
+            },
             backgroundColor: Colors.blueAccent,
             textColor: Colors.white,
             textSize: 16.0,

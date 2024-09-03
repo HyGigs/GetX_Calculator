@@ -1,5 +1,5 @@
-import 'package:calculator_getx/pages/kalkulator_aritmatika.dart';
 import 'package:get/get.dart';
+import 'dart:math';
 
 class Controller extends GetxController {
   // Keliling bangun datar
@@ -20,8 +20,9 @@ class Controller extends GetxController {
   final hasilKelilingTabung = RxDouble(0.0);
 
   // Method untuk menghitung keliling segitiga
-  void kelilingSegitiga(double sisi1, double sisi2, double sisi3) {
-    hasilKelilingSegitiga.value = sisi1 + sisi2 + sisi3;
+  void kelilingSegitiga(double alas, double tinggi) {
+    double sisiMiring = sqrt(pow(alas, 2) + pow(tinggi, 2)); // Calculate the hypotenuse
+    hasilKelilingSegitiga.value = alas + tinggi + sisiMiring;
   }
 
   // Method untuk menghitung keliling persegi panjang
