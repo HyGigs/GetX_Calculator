@@ -39,6 +39,18 @@ class Home extends StatelessWidget {
                     buttonType: ButtonType.elevated,
                     borderWidth: 0,
                     borderColor: Colors.transparent),
+                const SizedBox(height: 20),
+                CustomButton(
+                    text: "Keliling Persegi",
+                    onPressed: () {
+                      Get.toNamed('/kelilingPersegi');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
               ])),
         ));
   }
