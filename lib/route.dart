@@ -10,7 +10,7 @@ class AppRoutes {
 
   static final routes = [
     GetPage(name: home, page: () => Home()),
-    GetPage(name: kelilingSegitiga, page: () => KelilingSegitiga()),
+    GetPage(name: kelilingSegitiga, page: () =>  KelilingSegitiga()),
     GetPage(name: kelilingPersegiPanjang, page: () => KelilingPersegiPanjang())
   ];
 }

@@ -10,7 +10,7 @@ class Controller extends GetxController {
     hasilKelilingSegitiga.value = 0.5 * alas * tinggi;
 }
   kelilingPersegiPanjang(double panjang, double lebar){
-    hasilKelilingPersegiPanjang.value = 2*panjang * lebar;
+    hasilKelilingPersegiPanjang.value = 2 *panjang * lebar;
 }
 
 }

@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
+        body:  SafeArea(
       child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         CustomButton(
