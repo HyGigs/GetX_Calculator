@@ -12,11 +12,11 @@ class Controller extends GetxController {
   final hasilPembagian = RxDouble(0.0);
   final hasilModulus = RxDouble(0.0);
 
-  KelilingSegitiga (double alas,double tinggi){
+  KelilingSegitiga (double alas, double tinggi){
     hasilKelilingSegitiga.value = 0.5 * alas * tinggi;
 }
   kelilingPersegiPanjang(double panjang, double lebar){
-    hasilKelilingPersegiPanjang.value = 2*panjang * lebar;
+    hasilKelilingPersegiPanjang.value = 2 *panjang * lebar;
 }
   rumusAritmatika(double angka1, double angka2){
     hasilPertambahan.value = angka1 + angka2;

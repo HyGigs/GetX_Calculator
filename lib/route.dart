@@ -15,5 +15,6 @@ class AppRoutes {
     GetPage(name: kelilingSegitiga, page: () => KelilingSegitiga()),
     GetPage(name: kelilingPersegiPanjang, page: () => KelilingPersegiPanjang()),
     GetPage(name: aritmatika, page: () => KalkulatorAritmatika()),
+
   ];
 }
