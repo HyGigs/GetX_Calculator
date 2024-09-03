@@ -13,46 +13,57 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        CustomButton(
-            text: "Keliling Segitiga",
-            onPressed: () {
-              Get.toNamed('/kelilingSegitiga');
-            },
-            backgroundColor: Colors.black,
-            textColor: Colors.white,
-            textSize: 16.0,
-            buttonType: ButtonType.elevated,
-            borderWidth: 0,
-            borderColor: Colors.transparent),
-        const SizedBox(height: 20),
-            CustomButton(
-                text: "Keliling Persegi Panjang",
-                onPressed: () {
-                  Get.toNamed('/kelilingPersegiPanjang');
-                },
-                backgroundColor: Colors.black,
-                textColor: Colors.white,
-                textSize: 16.0,
-                buttonType: ButtonType.elevated,
-                borderWidth: 0,
-                borderColor: Colors.transparent),
+        body:  SafeArea(
+          child: Center(
+              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                CustomButton(
+                    text: "Keliling Segitiga",
+                    onPressed: () {
+                      Get.toNamed('/kelilingSegitiga');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
+                const SizedBox(height: 20),
+                CustomButton(
+                    text: "Keliling Persegi Panjang",
+                    onPressed: () {
+                      Get.toNamed('/kelilingPersegiPanjang');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
+                const SizedBox(height: 20),
+                CustomButton(
+                    text: "Keliling Persegi",
+                    onPressed: () {
+                      Get.toNamed('/kelilingPersegi');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
                 SizedBox(height: 10,),
-            CustomButton(
-                text: "Aritmatika",
-                onPressed: () {
-                  Get.toNamed('/aritmatika');
-                },
-                backgroundColor: Colors.black,
-                textColor: Colors.white,
-                textSize: 16.0,
-                buttonType: ButtonType.elevated,
-                borderWidth: 0,
-                borderColor: Colors.transparent),
-      ])),
-    ));
-       
+                CustomButton(
+                    text: "Aritmatika",
+                    onPressed: () {
+                      Get.toNamed('/aritmatika');
+                    },
+                    backgroundColor: Colors.black,
+                    textColor: Colors.white,
+                    textSize: 16.0,
+                    buttonType: ButtonType.elevated,
+                    borderWidth: 0,
+                    borderColor: Colors.transparent),
+              ])),
+        ));
   }
 }

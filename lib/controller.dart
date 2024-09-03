@@ -6,6 +6,7 @@ import 'package:calculator_getx/pages/keliling_segitiga.dart';
 class Controller extends GetxController {
   final hasilKelilingSegitiga = RxDouble(0.0);
   final hasilKelilingPersegiPanjang = RxDouble(0.0);
+  final hasilKelilingPersegi = RxDouble(0.0);
   final hasilPertambahan = RxDouble(0.0);
   final hasilPengurangan = RxDouble(0.0);
   final hasilPerkalian = RxDouble(0.0);
@@ -18,6 +19,13 @@ class Controller extends GetxController {
   kelilingPersegiPanjang(double panjang, double lebar){
     hasilKelilingPersegiPanjang.value = 2 *panjang * lebar;
 }
+  kelilingPersegi(double sisi,){
+    hasilKelilingPersegi.value = 2 *sisi;
+  }
+}
+
+
+
   rumusAritmatika(double angka1, double angka2){
     hasilPertambahan.value = angka1 + angka2;
     hasilModulus.value = angka1 % angka2;

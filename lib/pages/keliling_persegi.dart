@@ -6,14 +6,13 @@ import 'package:calculator_getx/controller.dart';
 import 'package:calculator_getx/widget/button.dart';
 import 'package:calculator_getx/widget/text_field.dart';
 
-class KelilingPersegiPanjang extends StatefulWidget {
+class KelilingPersegi extends StatefulWidget {
   @override
-  _KelilingPersegiPanjangState createState() => _KelilingPersegiPanjangState();
+  _KelilingPersegiState createState() => _KelilingPersegiState();
 }
 
-class _KelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
-  TextEditingController ctrPanjang = TextEditingController();
-  TextEditingController ctrLebar = TextEditingController();
+class _KelilingPersegiState extends State<KelilingPersegi> {
+  TextEditingController ctrSisi = TextEditingController();
   final Controller controller = Get.put(Controller());
   String ada = "";
   @override
@@ -21,24 +20,10 @@ class _KelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
     return Scaffold(
         body: Column(
           children: [
-            Text('Menghitung keliling Persegi Panjang', style: TextStyle(fontSize: 30)),
+            Text('Menghitung keliling Persegi', style: TextStyle(fontSize: 30)),
             CustomTextField(
-                controller: ctrPanjang,
-                labelText: "Panjang",
-                keyboardType: TextInputType.number,
-                obscureText: false,
-                fontSize: 16.0,
-                textColor: Colors.black,
-                labelTextColor: Colors.black,
-                borderColor: Colors.black,
-                focusedBorderColor: Colors.blueAccent,
-                enabledBorderColor: Colors.blueAccent),
-            SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-                controller: ctrLebar,
-                labelText: "Lebar",
+                controller: ctrSisi,
+                labelText: "sisi",
                 keyboardType: TextInputType.number,
                 obscureText: false,
                 fontSize: 16.0,
@@ -52,8 +37,8 @@ class _KelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
             ),
             CustomButton(
                 text: "Hitung",
-                onPressed: () => controller.kelilingPersegiPanjang(
-                    double.parse(ctrLebar.text), double.parse(ctrPanjang.text)),
+                onPressed: () => controller.kelilingPersegi(
+                   double.parse(ctrSisi.text)),
                 backgroundColor: Colors.blueAccent,
                 textColor: Colors.white,
                 textSize: 16.0,
@@ -63,7 +48,7 @@ class _KelilingPersegiPanjangState extends State<KelilingPersegiPanjang> {
             SizedBox(
               height: 10,
             ),
-            Obx( () => Text('${controller.hasilKelilingPersegiPanjang.value}'))
+            Obx( () => Text('${controller.hasilKelilingPersegi.value}'))
           ],
         ));
   }
